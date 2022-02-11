@@ -1,1 +1,1 @@
-# smartCampus
+# SmartCampus
