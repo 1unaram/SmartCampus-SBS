@@ -16,3 +16,17 @@ a {
 	color: white !important;
 	font-family: "twayair" !important;
 }
+
+.container {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	padding: 10px 0;
+	width: 100%;
+	justify-items: center;
+}
+
+.container .items {
+	width: 100%;
+}
