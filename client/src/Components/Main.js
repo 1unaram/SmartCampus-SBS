@@ -32,7 +32,7 @@ const Main = () => {
           flexDirection: "column",
           alignItems: "center",
         }}>
-        <Typography component="h1" variant="body2" className={style.chooseTitle}>
+        <Typography component="h1" className={style.chooseTitle}>
           현재 탑승 중인 지하철 호선을 선택해주세요
         </Typography>
 
