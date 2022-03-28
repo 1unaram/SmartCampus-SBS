@@ -6,6 +6,8 @@
 	font-style: normal;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap");
+
 /* 초기화 */
 a {
 	text-decoration: none !important;
@@ -29,4 +31,9 @@ a {
 
 .container .items {
 	width: 100%;
+}
+
+.formGroup {
+	font-family: "Noto Sans KR", sans-serif;
+	font-weight: 500;
 }
