@@ -45,6 +45,7 @@ const ComplainForm = () => {
     // form 데이터 관리
     const [complainData, setComplainData] = useState({
         trainNum: "",
+        line: lineInfo.line,
         destination: "",
         phoneNum: "",
         discomfort: [],
