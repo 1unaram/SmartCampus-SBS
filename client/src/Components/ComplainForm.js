@@ -44,13 +44,13 @@ const ComplainForm = () => {
     /* 데이터 관리 */
     // form 데이터 관리
     const [complainData, setComplainData] = useState({
-        trainNum: "",
+        trainNum: 0,
         line: lineInfo.line,
-        destination: "",
-        phoneNum: "",
+        destination: '',
+        phoneNum: '',
         discomfort: [],
-        temperature: "",
-        requirement: "",
+        temperature: 0,
+        requirement: '',
     })
 
     // 희망 온도
@@ -77,6 +77,16 @@ const ComplainForm = () => {
         "응급환자": 0,
         "몰래카메라 의심": 0,
     };
+    const checkboxLabelValue = {
+        "없음": 'null',
+        "마스크": 'mask',
+        "잡상인": 'peddler',
+        "취객": 'drunken',
+        "오물": 'trash',
+        "난동": 'riot',
+        "응급환자": 'emergency patient',
+        "몰래카메라 의심": 'hidden camera',
+    }
 
     // 이미지 업로드
     const [img, setImg] = useState('');
@@ -98,12 +108,14 @@ const ComplainForm = () => {
         let newChecked = [...complainData.discomfort];
 
         if (e.target.checked) {
-            newChecked.push(e.target.value);
+            newChecked.push(checkboxLabelValue[e.target.value]);
         } else {
-            newChecked = complainData.discomfort.filter((item) => item !== e.target.value);
+            newChecked = complainData.discomfort.filter((item) => item !== checkboxLabelValue[e.target.value]);
         }
 
         const newData = { ...complainData };
+
+        console.log(newData)
         newData.discomfort = newChecked;
 
         setComplainData(newData)
