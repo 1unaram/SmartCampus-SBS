@@ -15,7 +15,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 const Main = () => {
 
   // 호선 별 색상
-  const lineByColor = {
+  const lineColor = {
     "1": "#0052a4",
     "2": "#009d3e",
     "3": "#ef7c1c",
@@ -43,28 +43,28 @@ const Main = () => {
         </Link>
 
         {/* 제목 */}
-        <Typography component="h1" className={style.chooseTitle}>
+        <Typography component="h1" variant="h6" className={style.chooseTitle}>
           현재 탑승 중인 지하철 호선을 선택해주세요
         </Typography>
 
         {/* 호선 연결 */}
-        <Link to='/complainform?id=1' state={{ line: "1", color: lineByColor["1"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
+        <Link to='/complainform?id=1' state={{ line: "1", color: lineColor["1"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
         </Link>
-        <Link to='/complainform?id=2' state={{ line: "2", color: lineByColor["2"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["2"] }} endIcon={<ArrowForwardIosIcon />} className={style.line2}>2호선</Button>
+        <Link to='/complainform?id=2' state={{ line: "2", color: lineColor["2"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["2"] }} endIcon={<ArrowForwardIosIcon />} className={style.line2}>2호선</Button>
         </Link>
-        <Link to='/complainform?id=3' state={{ line: "3", color: lineByColor["3"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["3"] }} endIcon={<ArrowForwardIosIcon />} className={style.line3}>3호선</Button>
+        <Link to='/complainform?id=3' state={{ line: "3", color: lineColor["3"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["3"] }} endIcon={<ArrowForwardIosIcon />} className={style.line3}>3호선</Button>
         </Link>
-        <Link to='/complainform?id=4' state={{ line: "4", color: lineByColor["4"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["4"] }} endIcon={<ArrowForwardIosIcon />} className={style.line4}>4호선</Button>
+        <Link to='/complainform?id=4' state={{ line: "4", color: lineColor["4"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["4"] }} endIcon={<ArrowForwardIosIcon />} className={style.line4}>4호선</Button>
         </Link>
-        <Link to='/complainform?id=5' state={{ line: "5", color: lineByColor["5"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["5"] }} endIcon={<ArrowForwardIosIcon />} className={style.line5}>5호선</Button>
+        <Link to='/complainform?id=5' state={{ line: "5", color: lineColor["5"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["5"] }} endIcon={<ArrowForwardIosIcon />} className={style.line5}>5호선</Button>
         </Link>
-        <Link to='/complainform?id=6' state={{ line: "6", color: lineByColor["6"] }}>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineByColor["6"] }} endIcon={<ArrowForwardIosIcon />} className={style.line6}>6호선</Button>
+        <Link to='/complainform?id=6' state={{ line: "6", color: lineColor["6"] }}>
+          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["6"] }} endIcon={<ArrowForwardIosIcon />} className={style.line6}>6호선</Button>
         </Link>
       </Box>
     </Container >
