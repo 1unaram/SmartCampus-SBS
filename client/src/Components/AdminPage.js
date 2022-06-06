@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -27,21 +27,30 @@ const AdminPage = () => {
         "6": "#cd7c2f",
     }
 
-    // Toggle Button
-    const [selected, setSelected] = useState('0')
-    const handleSelected = (event, newSelected) => {
-        setSelected(newSelected);
-    }
 
-    // Complain Data
-    const [data, setData] = useState([]);
-
-    // Load handle
+    // Load complain
+    const [complainData, setComplainData] = useState([]);
     const loadComplain = () => {
         axios.get("/loadComplain")
-            .then((res) => { setData(res.data) })
-            .catch((err) => { console.log('Here! : ', err) });
+            .then((res) => { setComplainData(res.data) })
+            .catch((err) => { console.log('Cannot load complains from server : ', err) });
     };
+    useEffect(() => {
+        loadComplain();
+    }, [])
+
+    // Toggle Button - filtered
+    const [selectedComplain, setSelectedComplain] = useState('1')
+    const [filteredComplain, setFilteredComplain] = useState([]);
+    const handleSelectedComplain = (event, newSelectedComplain) => {
+        setSelectedComplain(newSelectedComplain);
+    }
+    useEffect(() => {
+        selectedComplain === '0' ? setFilteredComplain(complainData) :
+            setFilteredComplain(() =>
+                complainData.filter((complain) => parseInt(selectedComplain) === complain.line)
+            )
+    }, [selectedComplain, complainData])
 
     return (
         <Container maxWidth="xs">
@@ -66,9 +75,9 @@ const AdminPage = () => {
                 </Typography>
 
                 <ToggleButtonGroup
-                    value={selected}
+                    value={selectedComplain}
                     exclusive
-                    onChange={handleSelected}
+                    onChange={handleSelectedComplain}
                     size="large"
                     sx={{ mb: 3 }}
                 >
@@ -90,7 +99,7 @@ const AdminPage = () => {
                 </Box>
 
                 {/* Data Table */}
-                <ComplainTable complainData={data} />
+                <ComplainTable complainData={filteredComplain} />
 
             </Box>
         </Container >

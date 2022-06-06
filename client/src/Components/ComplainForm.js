@@ -124,7 +124,6 @@ const ComplainForm = () => {
     const submitComplain = () => {
         complainData.temperature = temperature;
         axios.post("/submitComplain", complainData)
-        console.log(complainData)
 
         handleDialog();
         handleOKdialog();

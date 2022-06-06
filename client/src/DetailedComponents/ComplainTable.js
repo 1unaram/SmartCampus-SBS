@@ -39,7 +39,7 @@ const ComplainTable = ({ complainData }) => {
 
                     <TableBody>
                         {data.map((row) => (
-                            <TableRow TableRow
+                            <TableRow
                                 key={row.id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
@@ -47,11 +47,11 @@ const ComplainTable = ({ complainData }) => {
                                 <TableCell sx={{ textAlign: "center" }}>{row.line}</TableCell>
                                 <TableCell sx={{ textAlign: "center" }}>{row.trainNum}</TableCell>
                                 <TableCell sx={{ textAlign: "center" }}>{row.destination}</TableCell>
-                                <TableCell>{row.time}</TableCell>
-                                <TableCell>{row.phoneNum}</TableCell>
+                                <TableCell sx={{ textAlign: "center" }}>{row.time}</TableCell>
+                                <TableCell sx={{ textAlign: "center" }}>{row.phoneNum}</TableCell>
                                 <TableCell sx={{ textAlign: "center" }}>{row.temperature}</TableCell>
-                                <TableCell>{row.discomfort}</TableCell>
-                                <TableCell>{row.requirement}</TableCell>
+                                <TableCell sx={{ textAlign: "center" }}>{row.discomfort === "null" || row.discomfort === "" ? "-" : row.discomfort}</TableCell>
+                                <TableCell sx={{ textAlign: "center" }}>{row.requirement === "null" || row.requirement === "" ? "-" : row.requirement}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
