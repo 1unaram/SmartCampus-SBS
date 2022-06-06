@@ -89,12 +89,12 @@ const ComplainForm = () => {
     }
 
     // 이미지 업로드
-    const [img, setImg] = useState('');
-    const onLoadImg = (e) => {
-        const file = e.target.files;
-        console.log(file);
-        setImg(file);
-    }
+    // const [img, setImg] = useState('');
+    // const onLoadImg = (e) => {
+    //     const file = e.target.files;
+    //     console.log(file);
+    //     setImg(file);
+    // }
 
     // handle input value
     const handleInput = (e) => {
@@ -251,7 +251,8 @@ const ComplainForm = () => {
                                         {"사진 업로드"}
                                     </Typography>
 
-                                    <input id={"upload-btn"} hidden type="file" onChange={onLoadImg} />
+                                    <input id={"upload-btn"} hidden type="file" />
+                                    {/* <input id={"upload-btn"} hidden type="file" onChange={onLoadImg}  /> */}
                                 </Button>
 
                                 {/* 제출 버튼 */}
