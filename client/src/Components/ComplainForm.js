@@ -115,7 +115,6 @@ const ComplainForm = () => {
 
         const newData = { ...complainData };
 
-        console.log(newData)
         newData.discomfort = newChecked;
 
         setComplainData(newData)

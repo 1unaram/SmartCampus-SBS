@@ -10,6 +10,7 @@ app.use(cors());
 const connection = require('./mysql');
 connection.connect();
 
+// Routes
 const submitComplain = require('./routes/submitComplain');
 app.use('/submitComplain', submitComplain);
 const loadComplain = require('./routes/loadComplain');
