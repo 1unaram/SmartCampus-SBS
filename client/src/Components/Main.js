@@ -48,22 +48,22 @@ const Main = () => {
         </Typography>
 
         {/* 호선 연결 */}
-        <Link to='/complainform?id=1' state={{ line: "1", color: lineColor["1"] }}>
+        <Link to='/complainform/1'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
         </Link>
-        <Link to='/complainform?id=2' state={{ line: "2", color: lineColor["2"] }}>
+        <Link to='/complainform/2'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["2"] }} endIcon={<ArrowForwardIosIcon />} className={style.line2}>2호선</Button>
         </Link>
-        <Link to='/complainform?id=3' state={{ line: "3", color: lineColor["3"] }}>
+        <Link to='/complainform/3'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["3"] }} endIcon={<ArrowForwardIosIcon />} className={style.line3}>3호선</Button>
         </Link>
-        <Link to='/complainform?id=4' state={{ line: "4", color: lineColor["4"] }}>
+        <Link to='/complainform/4'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["4"] }} endIcon={<ArrowForwardIosIcon />} className={style.line4}>4호선</Button>
         </Link>
-        <Link to='/complainform?id=5' state={{ line: "5", color: lineColor["5"] }}>
+        <Link to='/complainform/5'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["5"] }} endIcon={<ArrowForwardIosIcon />} className={style.line5}>5호선</Button>
         </Link>
-        <Link to='/complainform?id=6' state={{ line: "6", color: lineColor["6"] }}>
+        <Link to='/complainform/6'>
           <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["6"] }} endIcon={<ArrowForwardIosIcon />} className={style.line6}>6호선</Button>
         </Link>
       </Box>

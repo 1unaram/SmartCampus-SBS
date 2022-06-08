@@ -24,7 +24,7 @@ const ComplainTable = ({ complainData }) => {
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="complain table">
                     <TableHead sx={{ backgroundColor: '#00b992' }}>
-                        <TableRow >
+                        <TableRow>
                             <TableCell sx={{ color: "white" }}>ID</TableCell>
                             <TableCell sx={{ color: "white" }}>Line</TableCell>
                             <TableCell sx={{ color: "white" }}>Train Number</TableCell>

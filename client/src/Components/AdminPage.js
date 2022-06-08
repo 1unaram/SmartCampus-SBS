@@ -40,7 +40,7 @@ const AdminPage = () => {
     }, [])
 
     // Toggle Button - filtered
-    const [selectedComplain, setSelectedComplain] = useState('1')
+    const [selectedComplain, setSelectedComplain] = useState('0')
     const [filteredComplain, setFilteredComplain] = useState([]);
     const handleSelectedComplain = (event, newSelectedComplain) => {
         setSelectedComplain(newSelectedComplain);

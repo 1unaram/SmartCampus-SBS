@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -28,14 +28,24 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 const ComplainForm = () => {
 
-    // Link State 받아오기
-    const lineInfo = useLocation().state;
+    // Parameter
+    const params = useParams();
+
+    // 호선 별 색상
+    const lineColor = {
+        "1": "#0052a4",
+        "2": "#009d3e",
+        "3": "#ef7c1c",
+        "4": "#00a5de",
+        "5": "#996cac",
+        "6": "#cd7c2f",
+    }
 
     // MUI Theme 
     const theme = createTheme({
         palette: {
             primary: {
-                main: lineInfo.color,
+                main: lineColor[params.line],
                 contrastText: '#fff',
             },
         },
@@ -45,7 +55,7 @@ const ComplainForm = () => {
     // form 데이터 관리
     const [complainData, setComplainData] = useState({
         trainNum: 0,
-        line: lineInfo.line,
+        line: params.line,
         destination: '',
         phoneNum: '',
         discomfort: [],
@@ -144,8 +154,8 @@ const ComplainForm = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div style={{ backgroundColor: lineInfo.color, minHeight: "100vh" }}>
-                <Container maxWidth="xs" style={{ backgroundColor: lineInfo.color }}  >
+            <div style={{ backgroundColor: lineColor[params.line], minHeight: "100vh" }}>
+                <Container maxWidth="xs" style={{ backgroundColor: lineColor[params.line] }}  >
 
                     <Box
                         sx={{
@@ -164,7 +174,7 @@ const ComplainForm = () => {
                         </Link>
 
                         <Typography component="h1" variant="h5" className={style.title} sx={{ mt: 5 }}>
-                            {lineInfo.line}호선 열차 민원 접수
+                            {params.line}호선 열차 민원 접수
                         </Typography>
 
                         <Box
