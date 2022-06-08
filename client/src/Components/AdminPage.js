@@ -15,6 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const AdminPage = () => {
 
@@ -39,7 +40,7 @@ const AdminPage = () => {
             .catch((err) => { console.log('Cannot load complains from server : ', err) });
     };
     useEffect(() => {
-        if(logined) loadComplain();
+        if (logined) loadComplain();
     }, [logined])
 
     // Toggle Button - filtered
@@ -73,8 +74,8 @@ const AdminPage = () => {
                 </Link>
 
                 {/* 제목 */}
-                <Typography variant="h5" className={style.chooseTitle} sx={{ mb: 5 }}>
-                    Admin Page
+                <Typography variant="h4" className={style.chooseTitle} sx={{ mb: 5 }}>
+                    Admin Page <BarChartIcon sx={{ fontSize: 38, verticalAlign: "middle" }} />
                 </Typography>
 
                 <ToggleButtonGroup
@@ -84,27 +85,29 @@ const AdminPage = () => {
                     size="large"
                     sx={{ mb: 3 }}
                 >
-                    <ToggleButton value="0" sx={{ backgroundColor: "black", color: "white" }} >All</ToggleButton >
-                    <ToggleButton value="1" sx={{ backgroundColor: lineColor[1], color: "white" }}>1</ToggleButton >
-                    <ToggleButton value="2" sx={{ backgroundColor: lineColor[2], color: "white" }}>2</ToggleButton >
-                    <ToggleButton value="3" sx={{ backgroundColor: lineColor[3], color: "white" }}>3</ToggleButton >
-                    <ToggleButton value="4" sx={{ backgroundColor: lineColor[4], color: "white" }}>4</ToggleButton >
-                    <ToggleButton value="5" sx={{ backgroundColor: lineColor[5], color: "white" }}>5</ToggleButton >
-                    <ToggleButton value="6" sx={{ backgroundColor: lineColor[6], color: "white" }}>6</ToggleButton >
+                    <ToggleButton value="0" sx={{ backgroundColor: "black", color: "white" }}
+                        className={style.toggleBtn}>All</ToggleButton >
+                    <ToggleButton value="1" sx={{ backgroundColor: lineColor['1'], color: "white" }} className={style.toggleBtn}>1</ToggleButton >
+                    <ToggleButton value="2" sx={{ backgroundColor: lineColor['2'], color: "white" }} className={style.toggleBtn}>2</ToggleButton >
+                    <ToggleButton value="3" sx={{ backgroundColor: lineColor['3'], color: "white" }} className={style.toggleBtn}>3</ToggleButton >
+                    <ToggleButton value="4" sx={{ backgroundColor: lineColor['4'], color: "white" }} className={style.toggleBtn}>4</ToggleButton >
+                    <ToggleButton value="5" sx={{ backgroundColor: lineColor['5'], color: "white" }} className={style.toggleBtn}>5</ToggleButton >
+                    <ToggleButton value="6" sx={{ backgroundColor: lineColor['6'], color: "white" }} className={style.toggleBtn}>6</ToggleButton >
                 </ToggleButtonGroup>
 
                 {/* 새로고침 */}
                 <Box
-                    sx={{ display: "flex", alignSelf: "flex-end", mb: 1 }}
+                    sx={{ display: "flex", alignSelf: "flex-end", pl: 2, pr: 1, pt: 1.4, pb: 1, mb: 1, fontSize: 21, color: "red", borderRadius: 4 }}
                     onClick={loadComplain}
+                    className={style.refresh}
                 >
-                    refresh<RefreshIcon />
+                    Refresh <RefreshIcon />
                 </Box>
 
                 {/* Data Table */}
                 <ComplainTable complainData={filteredComplain} />
 
-                <AdminLogin trigger={logined}/>
+                <AdminLogin trigger={logined} setLogined={setLogined} />
 
             </Box>
         </Container >

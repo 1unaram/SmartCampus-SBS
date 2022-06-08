@@ -43,28 +43,28 @@ const Main = () => {
         </Link>
 
         {/* 제목 */}
-        <Typography component="h1" variant="h6" className={style.chooseTitle}>
+        <Typography component="h1" variant="h6" className={style.chooseTitle} sx={{ mb: 5 }}>
           현재 탑승 중인 지하철 호선을 선택해주세요
         </Typography>
 
         {/* 호선 연결 */}
-        <Link to='/complainform/1'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
+        <Link to='/complainform/1?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
         </Link>
-        <Link to='/complainform/2'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["2"] }} endIcon={<ArrowForwardIosIcon />} className={style.line2}>2호선</Button>
+        <Link to='/complainform/2?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["2"] }} endIcon={<ArrowForwardIosIcon />} >2호선</Button>
         </Link>
-        <Link to='/complainform/3'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["3"] }} endIcon={<ArrowForwardIosIcon />} className={style.line3}>3호선</Button>
+        <Link to='/complainform/3?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["3"] }} endIcon={<ArrowForwardIosIcon />} >3호선</Button>
         </Link>
-        <Link to='/complainform/4'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["4"] }} endIcon={<ArrowForwardIosIcon />} className={style.line4}>4호선</Button>
+        <Link to='/complainform/4?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["4"] }} endIcon={<ArrowForwardIosIcon />} >4호선</Button>
         </Link>
-        <Link to='/complainform/5'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["5"] }} endIcon={<ArrowForwardIosIcon />} className={style.line5}>5호선</Button>
+        <Link to='/complainform/5?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["5"] }} endIcon={<ArrowForwardIosIcon />} >5호선</Button>
         </Link>
-        <Link to='/complainform/6'>
-          <Button variant="contained" sx={{ m: 1, px: 12 }} style={{ backgroundColor: lineColor["6"] }} endIcon={<ArrowForwardIosIcon />} className={style.line6}>6호선</Button>
+        <Link to='/complainform/6?trainNum=&destination='>
+          <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["6"] }} endIcon={<ArrowForwardIosIcon />} >6호선</Button>
         </Link>
       </Box>
     </Container >

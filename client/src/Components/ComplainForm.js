@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useParams, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import QueryString from 'qs';
 
 // 컴포넌트 연결
 import style from './styles/ComplainForm.module.css';
@@ -152,6 +153,20 @@ const ComplainForm = () => {
         setOKdialog(!OKdialog)
     };
 
+    // Parameter값 할당
+    const location = useLocation();
+    const queryData = QueryString.parse(location.search, { ignoreQueryPrefix: true });
+    const [trainNum, setTrainNum] = useState("");
+    const [destination, setDestination] = useState("");
+    useEffect(() => {
+        if (queryData.trainNum) {
+            setTrainNum(queryData.trainNum);
+        }
+        if (queryData.destination) {
+            setDestination(queryData.destination);
+        }
+    }, [params]);
+
     return (
         <ThemeProvider theme={theme}>
             <div style={{ backgroundColor: lineColor[params.line], minHeight: "100vh" }}>
@@ -192,11 +207,11 @@ const ComplainForm = () => {
                             <FormGroup sx={{ width: "100%", fontSize: 14 }} className={style.formGroup}>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     열차번호
-                                    <TextField id="trainNum" label="Train" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} />
+                                    <TextField id="trainNum" label="Train" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={trainNum ? trainNum : ""} />
                                 </Box>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     행선지
-                                    <TextField id="destination" label="Destination" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} />
+                                    <TextField id="destination" label="Destination" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={destination ? destination : ""} />
                                 </Box>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     전화번호
