@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // 컴포넌트 연결
 import style from './styles/AdminPage.module.css';
 import ComplainTable from '../DetailedComponents/ComplainTable';
+import AdminLogin from '../DetailedComponents/AdminLogin';
 
 // MUI
 import Container from '@mui/material/Container';
@@ -27,6 +28,8 @@ const AdminPage = () => {
         "6": "#cd7c2f",
     }
 
+    // Admin Login
+    const [logined, setLogined] = useState(false);
 
     // Load complain
     const [complainData, setComplainData] = useState([]);
@@ -36,8 +39,8 @@ const AdminPage = () => {
             .catch((err) => { console.log('Cannot load complains from server : ', err) });
     };
     useEffect(() => {
-        loadComplain();
-    }, [])
+        if(logined) loadComplain();
+    }, [logined])
 
     // Toggle Button - filtered
     const [selectedComplain, setSelectedComplain] = useState('0')
@@ -100,6 +103,8 @@ const AdminPage = () => {
 
                 {/* Data Table */}
                 <ComplainTable complainData={filteredComplain} />
+
+                <AdminLogin trigger={logined}/>
 
             </Box>
         </Container >
