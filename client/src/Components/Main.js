@@ -48,22 +48,22 @@ const Main = () => {
         </Typography>
 
         {/* 호선 연결 */}
-        <Link to='/complainform/1?trainNum=&destination='>
+        <Link to='/complainform/1?trainNum=S/K401&destination=인천행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["1"] }} endIcon={<ArrowForwardIosIcon />} >1호선</Button>
         </Link>
-        <Link to='/complainform/2?trainNum=&destination='>
+        <Link to='/complainform/2?trainNum=S20521&destination=을지로순환행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["2"] }} endIcon={<ArrowForwardIosIcon />} >2호선</Button>
         </Link>
-        <Link to='/complainform/3?trainNum=&destination='>
+        <Link to='/complainform/3?trainNum=3421&destination=대화행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["3"] }} endIcon={<ArrowForwardIosIcon />} >3호선</Button>
         </Link>
-        <Link to='/complainform/4?trainNum=&destination='>
+        <Link to='/complainform/4?trainNum=4300&destination=당고개행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["4"] }} endIcon={<ArrowForwardIosIcon />} >4호선</Button>
         </Link>
-        <Link to='/complainform/5?trainNum=&destination='>
+        <Link to='/complainform/5?trainNum=5000&destination=방화행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["5"] }} endIcon={<ArrowForwardIosIcon />} >5호선</Button>
         </Link>
-        <Link to='/complainform/6?trainNum=&destination='>
+        <Link to='/complainform/6?trainNum=6000&destination=응암순환행'>
           <Button variant="contained" sx={{ width: 380, height: 50, m: 1, borderRadius: 5 }} style={{ backgroundColor: lineColor["6"] }} endIcon={<ArrowForwardIosIcon />} >6호선</Button>
         </Link>
       </Box>

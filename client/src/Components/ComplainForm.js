@@ -153,7 +153,7 @@ const ComplainForm = () => {
         setOKdialog(!OKdialog)
     };
 
-    // Parameter값 할당
+    // URL Parameter값 할당
     const location = useLocation();
     const queryData = QueryString.parse(location.search, { ignoreQueryPrefix: true });
     const [trainNum, setTrainNum] = useState("");
