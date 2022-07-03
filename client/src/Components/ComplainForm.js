@@ -156,16 +156,21 @@ const ComplainForm = () => {
     // URL Parameter값 할당
     const location = useLocation();
     const queryData = QueryString.parse(location.search, { ignoreQueryPrefix: true });
-    const [trainNum, setTrainNum] = useState("");
-    const [destination, setDestination] = useState("");
+    const [defaultTrainNum, setDefaultTrainNum] = useState("");
+    const [defaultDestination, setDefaultDestination] = useState("");
     useEffect(() => {
+        const newData = { ...complainData };
+
         if (queryData.trainNum) {
-            setTrainNum(queryData.trainNum);
+            setDefaultTrainNum(queryData.trainNum);
+            newData.trainNum = defaultTrainNum;
         }
         if (queryData.destination) {
-            setDestination(queryData.destination);
+            setDefaultDestination(queryData.destination);
+            newData.destination = defaultDestination;
         }
-    }, [params]);
+        setComplainData(newData);
+    }, [defaultTrainNum, defaultDestination]);
 
     return (
         <ThemeProvider theme={theme}>
@@ -207,11 +212,11 @@ const ComplainForm = () => {
                             <FormGroup sx={{ width: "100%", fontSize: 14 }} className={style.formGroup}>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     열차번호
-                                    <TextField id="trainNum" label="Train" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={trainNum ? trainNum : ""} />
+                                    <TextField id="trainNum" label="Train" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={defaultTrainNum ? defaultTrainNum : ""} />
                                 </Box>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     행선지
-                                    <TextField id="destination" label="Destination" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={destination ? destination : ""} />
+                                    <TextField id="destination" label="Destination" variant="outlined" sx={{ mt: 1 }} onChange={handleInput} value={defaultDestination ? defaultDestination : ""} />
                                 </Box>
                                 <Box sx={{ display: "flex", flexDirection: "column", mb: 2 }}>
                                     전화번호

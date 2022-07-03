@@ -64,6 +64,7 @@ const AdminPage = () => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    mb: 8
                 }}>
 
                 {/* 뒤로 가기 버튼 */}
