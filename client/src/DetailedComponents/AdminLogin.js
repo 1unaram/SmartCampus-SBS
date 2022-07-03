@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 // Style
 import style from './styles/AdminLogin.module.css';
@@ -10,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
 
 const AdminLogin = ({ trigger, setLogined }) => {
 
@@ -51,6 +53,9 @@ const AdminLogin = ({ trigger, setLogined }) => {
             borderRadius: 5
           }}
         >
+          <Link to="/">
+            <CloseIcon sx={{ ml: 28, mb: 3, fontSize: 26 }} />
+          </Link>
           <Typography variant="h5" sx={{ fontSize: 30, mb: 4, color: "blue" }} className={style.loginTitle}>
             <LockOpenIcon sx={{ fontSize: 30, }} /> Admin Login
           </Typography>
