@@ -15,7 +15,7 @@ import Paper from '@mui/material/Paper';
 const ComplainTable = ({ complainData }) => {
 
     // Data state
-    const [data, setData] = useState([]);
+    const [newData, setData] = useState([]);
 
     useEffect(() => {
         setData(complainData);
@@ -41,7 +41,10 @@ const ComplainTable = ({ complainData }) => {
                     </TableHead>
 
                     <TableBody>
-                        {data.map((row) => (
+                        {
+                            console.log(newData)
+                        }
+                        {newData.length != 0 ? newData.map((row) => (
                             <TableRow
                                 key={row.id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -56,7 +59,7 @@ const ComplainTable = ({ complainData }) => {
                                 <TableCell sx={{ textAlign: "center", fontSize: 16 }} className={style.table}>{row.discomfort === "null" || row.discomfort === "" ? "-" : row.discomfort}</TableCell>
                                 <TableCell sx={{ textAlign: "center", fontSize: 16 }} className={style.table}>{row.requirement === "null" || row.requirement === "" ? "-" : row.requirement}</TableCell>
                             </TableRow>
-                        ))}
+                        )) : ""}
                     </TableBody>
                 </Table>
             </TableContainer>
