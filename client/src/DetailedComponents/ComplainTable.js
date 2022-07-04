@@ -41,10 +41,7 @@ const ComplainTable = ({ complainData }) => {
                     </TableHead>
 
                     <TableBody>
-                        {
-                            console.log(newData)
-                        }
-                        {newData.length != 0 ? newData.map((row) => (
+                        {newData && newData.map((row) => (
                             <TableRow
                                 key={row.id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
