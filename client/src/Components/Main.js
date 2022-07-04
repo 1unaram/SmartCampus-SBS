@@ -36,9 +36,9 @@ const Main = () => {
         }}>
 
         {/* admin 버튼 */}
-        <Link to="/adminpage" style={{ position: "absolute", right: 700, top: 20 }}>
+        <Link to="/adminpage">
           <AdminPanelSettingsIcon
-            sx={{ fontSize: 30, color: "black" }}
+            sx={{ ml: 60, fontSize: 30, color: "black" }}
           />
         </Link>
 
